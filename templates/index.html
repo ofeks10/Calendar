@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% set active_page = 'home' %}
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="font-weight-light">{{ title }}</h1>
+                <p class="lead">A quick and easy way to create a shareable calendar</p>
+                <button class="btn btn-dark" data-toggle="modal" data-target="#calendarTitleModal">
+                    Create a Calendar
+                </button>
+
+            </div>
+                <div class="modal fade" id="calendarTitleModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content bg-dark">
+                            <form action="/create_cal" method="post" novalidate>
+                                {{ form.hidden_tag() }}
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Create A Calendar</h5>
+                                </div>
+                                <div class="modal-body">
+                                    {{ form.calendar_title(size=42, placeholder=form.calendar_title.label.text) }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    {{ form.submit(class_='btn btn-primary') }}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}

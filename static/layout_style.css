@@ -1,0 +1,16 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image:url('https://source.unsplash.com/GzvQD2RJB0s/1920x1080');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-light {
+    color: #d8d8d8 !important; /* override bootstraps light text color */
+}
+
+.copyright-text {
+    color: #d8d8d8;
+}
